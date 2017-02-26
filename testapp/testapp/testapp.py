@@ -1,16 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route("/")
-def hello():
-    return "Hello World!"
+def start_page():
+    return render_template("start-page.html")
 
 
-app.config.update(
-    DEBUG=True,
-    SECRET_KEY='development key',
-    USERNAME='admin',
-    PASSWORD='default'
-)
+@app.route("/next-page")
+def next_page():
+    return render_template("next-page.html")
