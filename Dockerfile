@@ -1,10 +1,10 @@
 FROM python:2.7.13
 
-RUN cd /usr/local/opt/flaskr && pip install --editable .
+COPY testapp /usr/local/opt/testapp
 
-COPY flaskr /usr/local/opt/flaskr
+RUN cd /usr/local/opt/testapp && pip install --editable .
 
-ENV FLASK_APP=flaskr \
+ENV FLASK_APP=testapp \
     FLASK_DEBUG=true
 
 CMD ["flask", "run", "--host=0.0.0.0"]

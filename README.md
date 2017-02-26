@@ -7,4 +7,4 @@
 docker-compose up
 
 ## Without docker
-flask run test-app
+FLASK_APP=testapp flask run
